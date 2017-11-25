@@ -46,7 +46,7 @@ pre.dyCodeHighlighter code span.dyCodeHighlighter-line {
 }
 
 pre.dyCodeHighlighter.line-numbers {
-    padding-left: 3.5em;
+    /*padding-left: 3.5em;*/
 }
 
 pre.dyCodeHighlighter code .dyCodeHighlighter-line-numbers-rows {
@@ -55,8 +55,8 @@ pre.dyCodeHighlighter code .dyCodeHighlighter-line-numbers-rows {
     pointer-events: none;
     top: 0;
     font-size: 100%;
-    left: -3.5em;
-    width: 3em;
+    /*left: -3.5em;*/
+    /*width: 3em;*/
     letter-spacing: -1px;
     border-right: 1px solid #999;
     -webkit-user-select: none;

@@ -1,7 +1,7 @@
 # dyCodeHighlighter
 Highlight code in the web page.
 
-#Download
+# Download
 
 [Download](https://github.com/yusufshakeel/dyCodeHighlighter/releases) the latest release of this project.
 

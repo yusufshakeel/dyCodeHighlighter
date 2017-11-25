@@ -1,6 +1,11 @@
 # dyCodeHighlighter
 Highlight code in the web page.
 
+# Status
+
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/dyCodeHighlighter)
+[![npm version](https://img.shields.io/badge/npm-1.0.0-blue.svg)](https://www.npmjs.com/package/dycodehighlighter)
+
 # Getting Started
 * [Download](https://github.com/yusufshakeel/dyCodeHighlighter/releases) the latest release of this project.
 * Clone the repo: `git clone https://github.com/yusufshakeel/dyCodeHighlighter.git`

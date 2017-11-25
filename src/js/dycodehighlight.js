@@ -26,7 +26,8 @@
         DY_CODEHIGHLIGHTER_CLASS_CODE_LINE = "dyCodeHighlighter-line",
         DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT = "highlight",
         DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS = "dyCodeHighlighter-line-numbers-rows",
-        DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_HIGHLIGHT = "data-dyCodeHighlighter-highlight";
+        DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_HIGHLIGHT = "data-dyCodeHighlighter-highlight",
+        DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_LINE_START = "data-dyCodeHighlighter-line-start";
 
     /**
      * This function will check if selected element has a given class.
@@ -98,7 +99,9 @@
         var
             self = this,
             option = {
-                showLineNumbers: false
+                showLineNumbers: false,
+                highlightLines: [],
+                lineStart: 1
             },
             elArr;
 
@@ -121,10 +124,7 @@
                 formattedCodeObj,
 
                 // line numbers row <span>
-                lineNumbersRowsSpan,
-
-                // last line number span width
-                lastLineNumberSpanTagWidth;
+                lineNumbersRowsSpan;
 
             global.console.log(codeEl);
             global.console.log(codeContent);
@@ -134,6 +134,9 @@
 
             // check if the user wants to highlight any lines
             option.highlightLines = elem.hasAttribute(DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_HIGHLIGHT) ? elem.getAttribute(DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_HIGHLIGHT).split(",") : [];
+
+            // check if the user wants to start line number from other value.
+            option.lineStart = elem.hasAttribute(DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_LINE_START) ? Number(elem.getAttribute(DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_LINE_START)) : option.lineStart;
 
             global.console.log(option);
 
@@ -148,12 +151,11 @@
             // if showing line numbers then adjust line number rows padding
             if (option.showLineNumbers) {
                 lineNumbersRowsSpan = elem.querySelector("span." + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS);
-                lastLineNumberSpanTagWidth = lineNumbersRowsSpan.lastChild.offsetWidth;
-                console.log(lastLineNumberSpanTagWidth);
 
-                elem.style.paddingLeft = lastLineNumberSpanTagWidth + 20 + "px";
-                lineNumbersRowsSpan.style.left = -lastLineNumberSpanTagWidth - 20 + "px";
-                lineNumbersRowsSpan.style.width = lastLineNumberSpanTagWidth + 10 + "px";
+                lineNumbersRowsSpan.style.counterReset = "linenumber " + (option.lineStart - 1);
+                lineNumbersRowsSpan.style.left = -lineNumbersRowsSpan.offsetWidth - 20 + "px";
+                lineNumbersRowsSpan.style.width = lineNumbersRowsSpan.offsetWidth + 10 + "px";
+                elem.style.paddingLeft = lineNumbersRowsSpan.offsetWidth + 10 + "px";
             }
 
         });

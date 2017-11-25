@@ -21,7 +21,7 @@
         document = global.document;
 
     // constants
-    const
+    var
         DY_CODEHIGHLIGHTER_CLASS = "dyCodeHighlighter",
         DY_CODEHIGHLIGHTER_CLASS_CODE_LINE = "dyCodeHighlighter-line",
         DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT = "highlight",

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dyCodeHighlighter</title>
+
+    <!-- Twitter Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- dyCodeHighlighter -->
+    <link rel="stylesheet" href="css/dycodehighlight.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <div class="text-center">
+                    <h1>dyCodeHighlighter</h1>
+                    <p class="lead">Highlight code in the web page.</p>
+                </div>
+                
+                <div class="text-center">
+                    <a href="https://github.com/yusufshakeel/dyCodeHighlighter/releases" class="btn btn-default btn-lg">Download</a>
+                    <a href="https://github.com/yusufshakeel/dyCodeHighlighter" class="btn btn-default btn-lg">GitHub</a>
+                </div>
+
+                <div class="text-center">
+                    <h3>License</h3>
+                    <p>It's free and released under <a href="https://github.com/yusufshakeel/dyCodeHighlighter/blob/master/LICENSE">MIT License</a> Copyright (c) 2017 <a href="https://github.com/yusufshakeel">Yusuf Shakeel</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <h3 class="text-center">Demo</h3>
+                <p>Using the class <code>.dyCodeHighlighter</code></p>
+<pre class="dyCodeHighlighter"><code>/**
+ * This is a sample program to print the following pattern.
+ *
+ * H
+ * Ha
+ * Hap
+ * Happ
+ * Happy
+ */
+var
+  str = "Happy",
+  len = str.length,
+  r,
+  c,
+  pattern;
+
+for (r = 0; r < len; r++) {
+  pattern = '';
+  for (c = 0; c <= r; c++) {
+    pattern += str[c];
+  }
+  console.log(pattern);
+}</code></pre>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <div class="text-center">
+                    <h3>Donate</h3>
+                    <p>Feeling generous &hearts; Buy me a cup of tea</p>
+                    <p><a href="https://www.paypal.me/yusufshakeel">Donate via PayPal</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <hr>
+
+                <div class="text-center">
+                    <p>Copyright &copy; Yusuf Shakeel</p>
+                    <p>MIT License</p>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script src="js/dycodehighlight.js"></script>
+</body>
+</html>

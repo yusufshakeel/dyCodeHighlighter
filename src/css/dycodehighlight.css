@@ -1,0 +1,42 @@
+/*!
+ * dyCodeHighlighter
+ *
+ * Author: Yusuf Shakeel
+ * https://github.com/yusufshakeel
+ *
+ * GitHub Link: https://github.com/yusufshakeel/dyCodeHighlighter
+ *
+ * MIT license
+ * Copyright (c) 2017 Yusuf Shakeel
+ *
+ * Date: 2015-01-09 Friday
+ */
+pre.dyCodeHighlighter {
+    word-break: normal;
+    word-wrap: normal;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    color: #333;
+    border-radius: 0px;
+    overflow: auto;
+    white-space: pre;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: monospace, Arial, sans-serif;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre.dyCodeHighlighter code {
+    word-break: normal;
+    word-wrap: normal;
+    white-space: unset;
+    position: relative;
+    display: block;
+}

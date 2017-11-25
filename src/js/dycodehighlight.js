@@ -23,8 +23,8 @@
     // constants
     const
         DY_CODEHIGHLIGHTER_CLASS = "dyCodeHighlighter",
-        DY_CODEHIGHLIGHTER_CLASS_CODE_LINE = "dyCodeHighlighter-code-line",
-        DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS = "line-numbers-rows";
+        DY_CODEHIGHLIGHTER_CLASS_CODE_LINE = "dyCodeHighlighter-line",
+        DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS = "dyCodeHighlighter-line-numbers-rows";
 
     /**
      * This function will check if selected element has a given class.
@@ -38,31 +38,50 @@
      *
      * @param {string} code
      * @param {object} option
-     * @returns {string}
+     * @returns {object}
      */
-    function getFormatedCode(code, option) {
+    function getFormattedCode(code, option) {
         var
-            formatedCode = "",
+            formattedCode = "",
             lines,
+            totalLines = 0,
             i;
 
         // split the code into lines
         lines = code.split("\n");
 
+        global.console.log(lines);
+
+        // find total lines
+        totalLines = lines.length;
+
+        // replace all empty line with space
+        for (i = 0; i < totalLines; i++) {
+            if (lines[i].length == 0) {
+                lines[i] = " ";
+            }
+        }
+
+        global.console.log(lines);
+
         // enclose in span
-        for (i = 0; i < lines.length; i++) {
-            formatedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_CODE_LINE + "'>" + lines[i] + "</span>";
+        for (i = 0; i < totalLines; i++) {
+            formattedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_CODE_LINE + "'>" + lines[i] + "</span>";
         }
 
         // add line numbers rows if user wants
         if (option.showLineNumbers) {
-            formatedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS + "'>";
-            for (i = 0; i < lines.length; i++) {
-                formatedCode += "<span></span>";
+            formattedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS + "'>";
+            for (i = 0; i < totalLines; i++) {
+                formattedCode += "<span></span>";
             }
+            formattedCode += "</span>";
         }
 
-        return formatedCode;
+        return {
+            totalLines: totalLines,
+            formattedCode: formattedCode
+        };
     }
 
     /**
@@ -91,7 +110,10 @@
                 codeEl = elem.getElementsByTagName('code')[0],
 
                 // get the text content of the selected <code> element
-                codeContent = codeEl.textContent;
+                codeContent = codeEl.textContent,
+
+                // formatted code
+                formattedCodeObj;
 
             global.console.log(codeEl);
             global.console.log(codeContent);
@@ -100,6 +122,14 @@
             option.showLineNumbers = hasClass(elem, 'line-numbers');
 
             global.console.log(option);
+
+            // get formatted code from the code content
+            formattedCodeObj = getFormattedCode(codeContent, option);
+
+            global.console.log(formattedCodeObj);
+
+            // update the selected <code> element HTML
+            codeEl.innerHTML = formattedCodeObj.formattedCode;
 
         });
     };

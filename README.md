@@ -8,7 +8,9 @@ Highlight code in the web page.
 
 
 # How to use?
-Include the javascript and stylesheet file from the `dist` directory.
+Include the Javascript and Stylesheet file from the `dist` directory.
+
+Then call the `init()` method of `dyCodeHighlighter`.
 
 Sample:
 
@@ -35,6 +37,12 @@ Sample:
 </body>
 </html>
 ```
+
+# Features
+* Style `pre.dyCodeHighlighter code` content
+* Show line numbers
+* Highlight lines
+* Start line numbers from given value
 
 
 # License

@@ -5,12 +5,14 @@ Highlight code in the web page.
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/dyCodeHighlighter)
 [![npm version](https://img.shields.io/badge/npm-1.0.0-blue.svg)](https://www.npmjs.com/package/dycodehighlighter)
+[![](https://data.jsdelivr.com/v1/package/npm/dycodehighlighter/badge)](https://www.jsdelivr.com/package/npm/dycodehighlighter)
+
 
 # Getting Started
 * [Download](https://github.com/yusufshakeel/dyCodeHighlighter/releases) the latest release of this project.
 * Clone the repo: `git clone https://github.com/yusufshakeel/dyCodeHighlighter.git`
 * Install with npm: `npm install dycodehighlighter`
-
+* From jsDelivr CDN: `https://www.jsdelivr.com/package/npm/dycodehighlighter`
 
 # How to use?
 Include the Javascript and Stylesheet file from the `dist` directory.

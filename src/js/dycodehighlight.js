@@ -113,7 +113,13 @@
                 codeContent = codeEl.textContent,
 
                 // formatted code
-                formattedCodeObj;
+                formattedCodeObj,
+
+                // line numbers row <span>
+                lineNumbersRowsSpan,
+
+                // last line number span width
+                lastLineNumberSpanTagWidth;
 
             global.console.log(codeEl);
             global.console.log(codeContent);
@@ -130,6 +136,17 @@
 
             // update the selected <code> element HTML
             codeEl.innerHTML = formattedCodeObj.formattedCode;
+
+            // if showing line numbers then adjust line number rows padding
+            if (option.showLineNumbers) {
+                lineNumbersRowsSpan = elem.querySelector("span." + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS);
+                lastLineNumberSpanTagWidth = lineNumbersRowsSpan.lastChild.offsetWidth;
+                console.log(lastLineNumberSpanTagWidth);
+
+                elem.style.paddingLeft = lastLineNumberSpanTagWidth + 20 + "px";
+                lineNumbersRowsSpan.style.left = -lastLineNumberSpanTagWidth - 20 + "px";
+                lineNumbersRowsSpan.style.width = lastLineNumberSpanTagWidth + 10 + "px";
+            }
 
         });
     };

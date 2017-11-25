@@ -20,7 +20,7 @@ pre.dyCodeHighlighter {
     border-radius: 0px;
     overflow: auto;
     white-space: pre;
-    font-size: 16px;
+    font-size: 18px;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -39,4 +39,41 @@ pre.dyCodeHighlighter code {
     white-space: unset;
     position: relative;
     display: block;
+}
+
+pre.dyCodeHighlighter code span.dyCodeHighlighter-line {
+    display: block;
+}
+
+pre.dyCodeHighlighter.line-numbers {
+    padding-left: 3.5em;
+}
+
+pre.dyCodeHighlighter code .dyCodeHighlighter-line-numbers-rows {
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.5em;
+    width: 3em;
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+pre.dyCodeHighlighter code .dyCodeHighlighter-line-numbers-rows > span {
+    display: block;
+    counter-increment: linenumber;
+}
+
+pre.dyCodeHighlighter code .dyCodeHighlighter-line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #333;
+    display: block;
+    padding-right: .8em;
+    text-align: right;
 }

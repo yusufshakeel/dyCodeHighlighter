@@ -24,7 +24,9 @@
     const
         DY_CODEHIGHLIGHTER_CLASS = "dyCodeHighlighter",
         DY_CODEHIGHLIGHTER_CLASS_CODE_LINE = "dyCodeHighlighter-line",
-        DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS = "dyCodeHighlighter-line-numbers-rows";
+        DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT = "highlight",
+        DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS = "dyCodeHighlighter-line-numbers-rows",
+        DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_HIGHLIGHT = "data-dyCodeHighlighter-highlight";
 
     /**
      * This function will check if selected element has a given class.
@@ -45,7 +47,8 @@
             formattedCode = "",
             lines,
             totalLines = 0,
-            i;
+            i,
+            lineHighlightClass = "";
 
         // split the code into lines
         lines = code.split("\n");
@@ -66,14 +69,16 @@
 
         // enclose in span
         for (i = 0; i < totalLines; i++) {
-            formattedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_CODE_LINE + "'>" + lines[i] + "</span>";
+            lineHighlightClass = option.highlightLines.indexOf((i + 1).toString()) >= 0 ? DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT : "";
+            formattedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_CODE_LINE + " " + lineHighlightClass + "'>" + lines[i] + "</span>";
         }
 
         // add line numbers rows if user wants
         if (option.showLineNumbers) {
             formattedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS + "'>";
             for (i = 0; i < totalLines; i++) {
-                formattedCode += "<span></span>";
+                lineHighlightClass = option.highlightLines.indexOf((i + 1).toString()) >= 0 ? DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT : "";
+                formattedCode += "<span class='" + lineHighlightClass + "'></span>";
             }
             formattedCode += "</span>";
         }
@@ -126,6 +131,9 @@
 
             // check if the user wants to show line numbers
             option.showLineNumbers = hasClass(elem, 'line-numbers');
+
+            // check if the user wants to highlight any lines
+            option.highlightLines = elem.hasAttribute(DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_HIGHLIGHT) ? elem.getAttribute(DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_HIGHLIGHT).split(",") : [];
 
             global.console.log(option);
 

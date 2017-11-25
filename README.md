@@ -42,7 +42,7 @@ Sample:
 * Style `pre.dyCodeHighlighter code` content
 * Show line numbers
 * Highlight lines
-* Start line numbers from given value
+* Start line number from given value
 
 
 # License

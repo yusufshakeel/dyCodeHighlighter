@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dyCodeHighlighter</title>
+
+    <!-- Twitter Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- dyCodeHighlighter -->
+    <link rel="stylesheet" href="dist/css/dycodehighlighter.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <div class="text-center">
+                    <h1>dyCodeHighlighter</h1>
+                    <p class="lead">Highlight code in the web page.</p>
+                </div>
+                
+                <div class="text-center">
+                    <a href="https://github.com/yusufshakeel/dyCodeHighlighter/releases" class="btn btn-default btn-lg">Download</a>
+                    <a href="https://github.com/yusufshakeel/dyCodeHighlighter" class="btn btn-default btn-lg">GitHub</a>
+                </div>
+
+                <div class="text-center">
+                    <h3>License</h3>
+                    <p>It's free and released under <a href="https://github.com/yusufshakeel/dyCodeHighlighter/blob/master/LICENSE">MIT License</a> Copyright (c) 2017 <a href="https://github.com/yusufshakeel">Yusuf Shakeel</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <h3 class="text-center">Setup</h3>
+                <p>Put your code inbetween opening and closing <code>pre code</code> tag.</p>
+                <p>Example:</p>
+                <pre>&lt;pre class="dyCodeHighlighter"&gt;
+&lt;code&gt;
+  // code...
+&lt;/code&gt;
+&lt;/pre&gt;</pre>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <h3 class="text-center">Simple</h3>
+                <p>Using the <code>.dyCodeHighlighter</code> class.</p>
+<pre class="dyCodeHighlighter"><code>/**
+ * This is a sample program to print the following pattern.
+ *
+ * H
+ * Ha
+ * Hap
+ * Happ
+ * Happy
+ */
+var
+  str = "Happy",
+  len = str.length,
+  r,
+  c,
+  pattern;
+
+for (r = 0; r < len; r++) {
+  pattern = '';
+  for (c = 0; c <= r; c++) {
+    pattern += str[c];
+  }
+  console.log(pattern);
+}</code></pre>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <h3 class="text-center">Showing line numbers</h3>
+                <p>Using the <code>.dyCodeHighlighter</code> and <code>.line-numbers</code> class.</p>
+                <p>Example:</p>
+                <pre>&lt;pre class="dyCodeHighlighter line-numbers"&gt;
+&lt;code&gt;
+  // code...
+&lt;/code&gt;
+&lt;/pre&gt;</pre>
+                <pre class="dyCodeHighlighter line-numbers"><code>/**
+ * This is a sample program to print the following pattern.
+ *
+ * H
+ * Ha
+ * Hap
+ * Happ
+ * Happy
+ */
+var
+  str = "Happy",
+  len = str.length,
+  r,
+  c,
+  pattern;
+
+for (r = 0; r < len; r++) {
+  pattern = '';
+  for (c = 0; c <= r; c++) {
+    pattern += str[c];
+  }
+  console.log(pattern);
+}</code></pre>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <h3 class="text-center">Showing line numbers and highlighted lines</h3>
+                <p>For highlighting code lines we use the <code>data-dyCodeHighlighter-highlight</code> attribute.</p>
+                <p>In the following example line 11, 20 and 22 are highlighted.</p>
+                <p>Example:</p>
+                <pre>&lt;pre class="dyCodeHighlighter line-numbers" data-dyCodeHighlighter-highlight="11,20,22"&gt;
+&lt;code&gt;
+  // code...
+&lt;/code&gt;
+&lt;/pre&gt;</pre>
+                <pre class="dyCodeHighlighter line-numbers" data-dyCodeHighlighter-highlight="11,20,22"><code>/**
+ * This is a sample program to print the following pattern.
+ *
+ * H
+ * Ha
+ * Hap
+ * Happ
+ * Happy
+ */
+var
+  str = "Happy",
+  len = str.length,
+  r,
+  c,
+  pattern;
+
+for (r = 0; r < len; r++) {
+  pattern = '';
+  for (c = 0; c <= r; c++) {
+    pattern += str[c];
+  }
+  console.log(pattern);
+}</code></pre>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <h3 class="text-center">Start line numbers from different value</h3>
+                <p>Use the <code>data-dyCodeHighlighter-line-start</code> attribute to start the line number from a given value.</p>
+                <p>In the following example line number starts from 10.</p>
+                <p>Example:</p>
+                <pre>&lt;pre class="dyCodeHighlighter line-numbers" data-dyCodeHighlighter-line-start="10"&gt;
+&lt;code&gt;
+  // code...
+&lt;/code&gt;
+&lt;/pre&gt;</pre>
+                <pre class="dyCodeHighlighter line-numbers" data-dyCodeHighlighter-line-start="10"><code>/**
+ * This is a sample program to print the following pattern.
+ *
+ * H
+ * Ha
+ * Hap
+ * Happ
+ * Happy
+ */
+var
+  str = "Happy",
+  len = str.length,
+  r,
+  c,
+  pattern;
+
+for (r = 0; r < len; r++) {
+  pattern = '';
+  for (c = 0; c <= r; c++) {
+    pattern += str[c];
+  }
+  console.log(pattern);
+}</code></pre>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <div class="text-center">
+                    <h3>Donate</h3>
+                    <p>Feeling generous &hearts; Buy me a cup of tea</p>
+                    <p><a href="https://www.paypal.me/yusufshakeel">Donate via PayPal</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <hr>
+
+                <div class="text-center">
+                    <p>Copyright &copy; Yusuf Shakeel</p>
+                    <p>MIT License</p>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script src="dist/js/dycodehighlighter.min.js"></script>
+    <script>dyCodeHighlighter.init();</script>
+</body>
+</html>

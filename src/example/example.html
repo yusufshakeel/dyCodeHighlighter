@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dyCodeHighlighter</title>
+
+    <!-- dyCodeHighlighter -->
+    <link rel="stylesheet" href="../css/dycodehighlighter.css">
+</head>
+<body>
+    <h3 class="text-center">Demo</h3>
+    <p>Using the class <code>.dyCodeHighlighter</code></p>
+<pre class="dyCodeHighlighter"><code>/**
+ * This is a sample program to print the following pattern.
+ *
+ * H
+ * Ha
+ * Hap
+ * Happ
+ * Happy
+ */
+var
+  str = "Happy",
+  len = str.length,
+  r,
+  c,
+  pattern;
+
+for (r = 0; r < len; r++) {
+  pattern = '';
+  for (c = 0; c <= r; c++) {
+    pattern += str[c];
+  }
+  console.log(pattern);
+}</code></pre>
+
+    <hr>
+
+    <h3>Demo 2</h3>
+    <p>Using the <code>.dyCodeHighlighter</code> class.</p>
+    <pre class="dyCodeHighlighter"><code>/**
+ * Print Hello World
+ */
+console.log("Hello World");</code></pre>
+
+    <!-- javascript -->
+    <script src="../js/dycodehighlighter.js"></script>
+    <script>dyCodeHighlighter.init();</script>
+</body>
+</html>

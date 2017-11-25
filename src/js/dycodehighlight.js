@@ -54,8 +54,6 @@
         // split the code into lines
         lines = code.split("\n");
 
-        global.console.log(lines);
-
         // find total lines
         totalLines = lines.length;
 
@@ -65,8 +63,6 @@
                 lines[i] = " ";
             }
         }
-
-        global.console.log(lines);
 
         // enclose in span
         for (i = 0; i < totalLines; i++) {
@@ -108,8 +104,6 @@
         // get targeted elements
         elArr = document.getElementsByClassName(DY_CODEHIGHLIGHTER_CLASS);
 
-        global.console.log(elArr);
-
         Array.prototype.forEach.call(elArr, function (elem, idx) {
 
             // variables
@@ -126,9 +120,6 @@
                 // line numbers row <span>
                 lineNumbersRowsSpan;
 
-            global.console.log(codeEl);
-            global.console.log(codeContent);
-
             // check if the user wants to show line numbers
             option.showLineNumbers = hasClass(elem, 'line-numbers');
 
@@ -138,12 +129,8 @@
             // check if the user wants to start line number from other value.
             option.lineStart = elem.hasAttribute(DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_LINE_START) ? Number(elem.getAttribute(DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_LINE_START)) : option.lineStart;
 
-            global.console.log(option);
-
             // get formatted code from the code content
             formattedCodeObj = getFormattedCode(codeContent, option);
-
-            global.console.log(formattedCodeObj);
 
             // update the selected <code> element HTML
             codeEl.innerHTML = formattedCodeObj.formattedCode;
@@ -151,7 +138,6 @@
             // if showing line numbers then adjust line number rows padding
             if (option.showLineNumbers) {
                 lineNumbersRowsSpan = elem.querySelector("span." + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS);
-
                 lineNumbersRowsSpan.style.counterReset = "linenumber " + (option.lineStart - 1);
                 lineNumbersRowsSpan.style.left = -lineNumbersRowsSpan.offsetWidth - 20 + "px";
                 lineNumbersRowsSpan.style.width = lineNumbersRowsSpan.offsetWidth + 10 + "px";

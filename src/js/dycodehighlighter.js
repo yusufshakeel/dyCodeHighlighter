@@ -57,10 +57,18 @@
         // find total lines
         totalLines = lines.length;
 
-        // replace all empty line with space
+        // formatting
         for (i = 0; i < totalLines; i++) {
+
+            // replace all empty line with space
             if (lines[i].length == 0) {
                 lines[i] = " ";
+            }
+
+            // html encode
+            else {
+                lines[i] = lines[i].replace(/\</g, '&lt;');
+                lines[i] = lines[i].replace(/\>/g, '&gt;');
             }
         }
 
@@ -94,11 +102,6 @@
         // variables
         var
             self = this,
-            option = {
-                showLineNumbers: false,
-                highlightLines: [],
-                lineStart: 1
-            },
             elArr;
 
         // get targeted elements
@@ -108,6 +111,13 @@
 
             // variables
             var
+                // option
+                option = {
+                    showLineNumbers: false,
+                    highlightLines: [],
+                    lineStart: 1
+                },
+
                 // get the first child <code> element of the selected elem
                 codeEl = elem.getElementsByTagName('code')[0],
 

@@ -28,6 +28,9 @@
     border-bottom: none;
     padding: 5px 10px;
     background-color: #fafbfc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .dyCodeHighlighter-header span {
@@ -43,7 +46,8 @@
     padding-right: 0;
 }
 
-.dyCodeHighlighter-header-header span.filename {
+.dyCodeHighlighter-header span.filename {
+    cursor: default;
 }
 
 /*------------- pre ------------------*/

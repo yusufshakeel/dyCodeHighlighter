@@ -168,3 +168,7 @@ pre.dyCodeHighlighter.theme-blue code span.dyCodeHighlighter-line-numbers-rows >
 pre.dyCodeHighlighter.no-left-border {
     border-left: 1px solid #aaa !important;
 }
+
+pre.dyCodeHighlighter.no-line-numbers-border code span.dyCodeHighlighter-line-numbers-rows {
+    border-right: none !important;
+}

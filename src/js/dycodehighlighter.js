@@ -22,6 +22,7 @@
 
         // constants
         DY_CODEHIGHLIGHTER_CLASS = "dyCodeHighlighter",
+        DY_CODEHIGHLIGHTER_CLASS_BODY = "dyCodeHighlighter-body",
         DY_CODEHIGHLIGHTER_CLASS_CODE_LINE = "dyCodeHighlighter-line",
         DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT = "highlight",
         DY_CODEHIGHLIGHTER_CLASS_CONTAINER = "dyCodeHighlighter-container",
@@ -90,12 +91,12 @@
 
         // if showing lines
         if (option.lines === 'show') {
-            html += "<span>" + option.totalLines + " Lines</span>";
+            html += "<span>" + option.totalLines + " lines</span>";
         }
 
-        // if showing lang
-        if (option.lang.length > 0) {
-            html += "<span>" + option.lang + "</span>";
+        // if showing filename
+        if (option.filename.length > 0) {
+            html += "<span class='filename' data-filename='" + option.filename + "'>" + option.filename + "</span>";
         }
 
         // add the html to the header
@@ -187,7 +188,7 @@
                 defaultHeader = {
                     show: false,
                     lines: 'hide',
-                    lang: ''
+                    filename: ''
                 },
 
                 // default options for the selected elem element
@@ -210,10 +211,19 @@
                 // line numbers row <span>
                 lineNumbersRowsSpan;
 
-            //---------- prepare the container element ------------
+            /**
+             * prepare the container element
+             */
+
+            // add the container class to the container element
             containerEl.className = DY_CODEHIGHLIGHTER_CLASS_CONTAINER;
 
-            //---------- prepare the selected elem element ----------
+            /**
+             * prepare the selected elem element
+             */
+
+            // add the body class to the selected elem element
+            elem.className += " " + DY_CODEHIGHLIGHTER_CLASS_BODY;
 
             // check if the user wants to show line numbers
             option.showLineNumbers = hasClass(elem, 'line-numbers');

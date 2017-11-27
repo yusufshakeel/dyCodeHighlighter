@@ -244,8 +244,6 @@
                 option.header.show = true;
             }
 
-            global.console.log(option);
-
             // get formatted code from the code content
             formattedCodeObj = getFormattedCode(codeContent, option);
 

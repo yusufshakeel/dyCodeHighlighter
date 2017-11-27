@@ -21,7 +21,7 @@ pre.dyCodeHighlighter {
     border-radius: 0px;
     overflow: auto;
     white-space: pre;
-    font-size: 18px;
+    /*font-size: 18px;*/
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -82,4 +82,40 @@ pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows > span:befor
     display: block;
     padding-right: .8em;
     text-align: right;
+}
+
+
+/*=.theme-dark
+---------------*/
+pre.dyCodeHighlighter.theme-dark {
+    border-left: 5px solid #808080;
+    background-color: #333;
+    color: #fefefe;
+}
+
+pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line.highlight,
+pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
+    background-color: #696969
+}
+
+pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span:before {
+    color: #fefefe;
+}
+
+
+/*=.theme-blue
+---------------*/
+pre.dyCodeHighlighter.theme-blue {
+    border-left: 5px solid #1e90ff;
+    background-color: #fff;
+    color: #333;
+}
+
+pre.dyCodeHighlighter.theme-blue code span.dyCodeHighlighter-line.highlight,
+pre.dyCodeHighlighter.theme-blue code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
+    background-color: #e6e6fa;
+}
+
+pre.dyCodeHighlighter.theme-blue code span.dyCodeHighlighter-line-numbers-rows > span:before {
+    color: #333;
 }

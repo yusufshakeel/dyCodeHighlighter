@@ -1,6 +1,6 @@
 {
   "name": "dycodehighlighter",
-  "version": "1.0.01",
+  "version": "1.1.0",
   "description": "Highlight code in the web page.",
   "main": "Gruntfile.js",
   "scripts": {

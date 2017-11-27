@@ -26,6 +26,10 @@
                 </div>
 
                 <div class="text-center">
+                    <h4><a href='https://www.dyclassroom.com/dycodehighlighter/documentation'>Click here</a> for the documentation.</h4>
+                </div>
+
+                <div class="text-center">
                     <h3>License</h3>
                     <p>It's free and released under <a href="https://github.com/yusufshakeel/dyCodeHighlighter/blob/master/LICENSE">MIT License</a> Copyright (c) 2017 <a href="https://github.com/yusufshakeel">Yusuf Shakeel</a></p>
                 </div>
@@ -151,6 +155,84 @@ for (r = 0; r < len; r++) {
 &lt;/code&gt;
 &lt;/pre&gt;</pre>
                 <pre class="dyCodeHighlighter line-numbers" data-dyCodeHighlighter-line-start="10"><code>/**
+ * This is a sample program to print the following pattern.
+ *
+ * H
+ * Ha
+ * Hap
+ * Happ
+ * Happy
+ */
+var
+  str = "Happy",
+  len = str.length,
+  r,
+  c,
+  pattern;
+
+for (r = 0; r < len; r++) {
+  pattern = '';
+  for (c = 0; c <= r; c++) {
+    pattern += str[c];
+  }
+  console.log(pattern);
+}</code></pre>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <h3 class="text-center">Theme: Dark</h3>
+
+                <p>Using the following classes:</p>
+                <ul>
+                    <li><code>.dyCodeHighlighter</code></li>
+                    <li><code>.line-numbers</code></li>
+                    <li><code>.theme-dark</code></li>
+                </ul>
+                <p>Using the following attributes:</p>
+                <ul>
+                    <li><code>data-dyCodeHighlighter-highlight="11,20,22"</code></li>
+                </ul>
+
+                <pre class="dyCodeHighlighter line-numbers theme-dark" data-dyCodeHighlighter-highlight="11,20,22"><code>/**
+ * This is a sample program to print the following pattern.
+ *
+ * H
+ * Ha
+ * Hap
+ * Happ
+ * Happy
+ */
+var
+  str = "Happy",
+  len = str.length,
+  r,
+  c,
+  pattern;
+
+for (r = 0; r < len; r++) {
+  pattern = '';
+  for (c = 0; c <= r; c++) {
+    pattern += str[c];
+  }
+  console.log(pattern);
+}</code></pre>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <h3 class="text-center">Theme: Blue</h3>
+
+                <p>Using the following classes:</p>
+                <ul>
+                    <li><code>.dyCodeHighlighter</code></li>
+                    <li><code>.line-numbers</code></li>
+                    <li><code>.theme-blue</code></li>
+                </ul>
+                <p>Using the following attributes:</p>
+                <ul>
+                    <li><code>data-dyCodeHighlighter-highlight="11,20,22"</code></li>
+                </ul>
+
+                <pre class="dyCodeHighlighter line-numbers theme-blue" data-dyCodeHighlighter-highlight="11,20,22"><code>/**
  * This is a sample program to print the following pattern.
  *
  * H

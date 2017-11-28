@@ -4,7 +4,7 @@ Highlight code in the web page.
 # Status
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/dyCodeHighlighter)
-[![npm version](https://img.shields.io/badge/npm-1.1.0-blue.svg)](https://www.npmjs.com/package/dycodehighlighter)
+[![npm version](https://img.shields.io/badge/npm-1.2.0-blue.svg)](https://www.npmjs.com/package/dycodehighlighter)
 [![](https://data.jsdelivr.com/v1/package/npm/dycodehighlighter/badge)](https://www.jsdelivr.com/package/npm/dycodehighlighter)
 
 # Documentation
@@ -51,8 +51,9 @@ Sample:
 * Style `pre.dyCodeHighlighter code` content
 * Show line numbers
 * Highlight lines
-* Start line number from given value
-* Theme - Dark, Blue
+* Show header info like: total lines and filename
+* Start line number from a custom integer value like -10, 0, 10 etc.
+* Theme: blue, choco, dark, gray
 
 
 # License

@@ -128,24 +128,6 @@ pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows > span:befor
 
 /*------------- themes ------------------*/
 
-/*=.theme-dark
----------------*/
-pre.dyCodeHighlighter.theme-dark {
-    border-left: 5px solid #808080;
-    background-color: #333;
-    color: #fefefe;
-}
-
-pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line.highlight,
-pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
-    background-color: #696969
-}
-
-pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span:before {
-    color: #fefefe;
-}
-
-
 /*=.theme-blue
 ---------------*/
 pre.dyCodeHighlighter.theme-blue {
@@ -161,6 +143,23 @@ pre.dyCodeHighlighter.theme-blue code span.dyCodeHighlighter-line-numbers-rows >
 
 pre.dyCodeHighlighter.theme-blue code span.dyCodeHighlighter-line-numbers-rows > span:before {
     color: #333;
+}
+
+/*=.theme-dark
+---------------*/
+pre.dyCodeHighlighter.theme-dark {
+    border-left: 5px solid #808080;
+    background-color: #333;
+    color: #fefefe;
+}
+
+pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line.highlight,
+pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
+    background-color: #696969
+}
+
+pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span:before {
+    color: #fefefe;
 }
 
 /*------------- important overrides ------------------*/

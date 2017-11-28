@@ -11,6 +11,46 @@
  *
  * Date: 2015-01-09 Friday
  */
+
+/*------------- container ------------------*/
+.dyCodeHighlighter-container {
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/*------------- header ------------------*/
+.dyCodeHighlighter-header {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border: 1px solid #aaa;
+    border-bottom: none;
+    padding: 5px 10px;
+    background-color: #fafbfc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dyCodeHighlighter-header span {
+    display: inline-block;
+    margin-right: 5px;
+    border-right: 1px solid #aaa;
+    padding-right: 5px;
+    font-family: monospace, Arial, sans-serif;
+}
+
+.dyCodeHighlighter-header span:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.dyCodeHighlighter-header span.filename {
+    cursor: default;
+}
+
+/*------------- pre ------------------*/
 pre.dyCodeHighlighter {
     word-break: normal;
     word-wrap: normal;
@@ -23,8 +63,10 @@ pre.dyCodeHighlighter {
     white-space: pre;
     /*font-size: 18px;*/
     padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    /*margin-top: 20px;*/
+    /*margin-bottom: 20px;*/
     font-family: monospace, Arial, sans-serif;
     -moz-tab-size: 4;
     tab-size: 4;
@@ -43,16 +85,13 @@ pre.dyCodeHighlighter code {
 }
 
 pre.dyCodeHighlighter code span.dyCodeHighlighter-line {
+    padding: 1px 0;
     display: block;
 }
 
 pre.dyCodeHighlighter code span.dyCodeHighlighter-line.highlight,
 pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
     background-color: #fff8dc;
-}
-
-pre.dyCodeHighlighter.line-numbers {
-    /*padding-left: 3.5em;*/
 }
 
 pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows {
@@ -72,6 +111,15 @@ pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows {
 }
 
 pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows > span {
+    padding: 1px 0;
+    color: #333;
+    display: block;
+    padding-right: .8em;
+    text-align: right;
+}
+
+/*
+pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows > span {
     display: block;
     counter-increment: linenumber;
 }
@@ -83,29 +131,14 @@ pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows > span:befor
     padding-right: .8em;
     text-align: right;
 }
+*/
 
-
-/*=.theme-dark
----------------*/
-pre.dyCodeHighlighter.theme-dark {
-    border-left: 5px solid #808080;
-    background-color: #333;
-    color: #fefefe;
-}
-
-pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line.highlight,
-pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
-    background-color: #696969
-}
-
-pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span:before {
-    color: #fefefe;
-}
-
+/*------------- themes ------------------*/
 
 /*=.theme-blue
 ---------------*/
 pre.dyCodeHighlighter.theme-blue {
+    border: 1px solid #1e90ff;
     border-left: 5px solid #1e90ff;
     background-color: #fff;
     color: #333;
@@ -118,4 +151,68 @@ pre.dyCodeHighlighter.theme-blue code span.dyCodeHighlighter-line-numbers-rows >
 
 pre.dyCodeHighlighter.theme-blue code span.dyCodeHighlighter-line-numbers-rows > span:before {
     color: #333;
+}
+
+/*=.theme-dark
+---------------*/
+pre.dyCodeHighlighter.theme-dark {
+    border: 1px solid #808080;
+    border-left: 5px solid #808080;
+    background-color: #333;
+    color: #fefefe;
+}
+
+pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line.highlight,
+pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
+    background-color: #696969
+}
+
+pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span {
+    color: #fefefe;
+}
+
+/*=.theme-choco
+---------------*/
+pre.dyCodeHighlighter.theme-choco {
+    border: 1px solid #ab4700;
+    border-left: 5px solid #ab4700;
+    background-color: #fff;
+    color: #333;
+}
+
+pre.dyCodeHighlighter.theme-choco code span.dyCodeHighlighter-line.highlight,
+pre.dyCodeHighlighter.theme-choco code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
+    background-color: #f9e6d9;
+}
+
+/*=.theme-gray
+---------------*/
+pre.dyCodeHighlighter.theme-gray {
+    border: 1px solid #aaa;
+    border-left: 5px solid #aaa;
+    background-color: #fff;
+    color: #333;
+}
+
+pre.dyCodeHighlighter.theme-gray code span.dyCodeHighlighter-line.highlight,
+pre.dyCodeHighlighter.theme-gray code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
+    background-color: #efefef;
+}
+
+pre.dyCodeHighlighter.theme-gray code span.dyCodeHighlighter-line-numbers-rows > span {
+    color: #333;
+}
+
+/*------------- important overrides ------------------*/
+
+pre.dyCodeHighlighter.no-thick-left-border {
+    border-left-width: 1px !important;
+}
+
+pre.dyCodeHighlighter.no-border {
+    border: 0 !important;
+}
+
+pre.dyCodeHighlighter.no-line-numbers-border code span.dyCodeHighlighter-line-numbers-rows {
+    border-right: none !important;
 }

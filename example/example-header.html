@@ -8,10 +8,22 @@
     <link rel="stylesheet" href="../dist/css/dycodehighlighter.min.css">
 </head>
 <body>
-    <h3 class="text-center">Demo - Showing Line Numbers & Highlight</h3>
-    <p>Using the <code>.dyCodeHighlighter</code> and <code>.line-numbers</code> class</p>
-    <p>Use the <code>data-dyCodeHighlighter-line-start</code> attribute to start the line number from a given value.</p>
-<pre class="dyCodeHighlighter line-numbers" data-dyCodeHighlighter-highlight="11,20,22"><code>/**
+    <h3 class="text-center">Demo - Show Header</h3>
+
+    <p>Using the following classes:</p>
+    <ul>
+        <li><code>.dyCodeHighlighter</code></li>
+        <li><code>.line-numbers</code></li>
+    </ul>
+    <p>Using the following attributes:</p>
+    <ul>
+        <li><code>data-dyCodeHighlighter-highlight="11,20,22"</code></li>
+        <li><code>data-dyCodeHighlighter-header='{"lines": "show", "filename": "app.js"}'</code></li>
+    </ul>
+
+<pre class="dyCodeHighlighter line-numbers"
+     data-dyCodeHighlighter-highlight="11,20,22"
+     data-dyCodeHighlighter-header='{"lines": "show", "filename": "app.js"}'><code>/**
  * This is a sample program to print the following pattern.
  *
  * H

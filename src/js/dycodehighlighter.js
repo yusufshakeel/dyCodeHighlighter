@@ -24,13 +24,15 @@
         DY_CODEHIGHLIGHTER_CLASS = "dyCodeHighlighter",
         DY_CODEHIGHLIGHTER_CLASS_BODY = "dyCodeHighlighter-body",
         DY_CODEHIGHLIGHTER_CLASS_CODE_LINE = "dyCodeHighlighter-line",
+        DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_NUMBER = "dyCodeHighlighter-line-number",
         DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT = "highlight",
         DY_CODEHIGHLIGHTER_CLASS_CONTAINER = "dyCodeHighlighter-container",
         DY_CODEHIGHLIGHTER_CLASS_HEADER = "dyCodeHighlighter-header",
         DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS = "dyCodeHighlighter-line-numbers-rows",
         DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_HIGHLIGHT = "data-dyCodeHighlighter-highlight",
         DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_LINE_START = "data-dyCodeHighlighter-line-start",
-        DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_HEADER = "data-dyCodeHighlighter-header";
+        DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_HEADER = "data-dyCodeHighlighter-header"
+    ;
 
     /**
      * This function will check if selected element has a given class.
@@ -119,6 +121,7 @@
             lines,
             totalLines = 0,
             i,
+            j,
             lineHighlightClass = "";
 
         // split the code into lines
@@ -143,18 +146,30 @@
         }
 
         // enclose in span
-        for (i = 0; i < totalLines; i++) {
-            lineHighlightClass = option.highlightLines.indexOf((i + 1).toString()) >= 0 ? DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT : "";
+        // for (i = 0; i < totalLines; i++) {
+        //     lineHighlightClass = option.highlightLines.indexOf((i + 1).toString()) >= 0 ? DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT : "";
+        //     formattedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_CODE_LINE + " " + lineHighlightClass + "'>" + lines[i] + "</span>";
+        // }
+
+        for (i = 0, j = option.lineStart; i < totalLines; i++, j++) {
+            lineHighlightClass = option.highlightLines.indexOf(j.toString()) >= 0 ? DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT : "";
             formattedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_CODE_LINE + " " + lineHighlightClass + "'>" + lines[i] + "</span>";
         }
 
         // add line numbers rows if user wants
         if (option.showLineNumbers) {
             formattedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS + "'>";
-            for (i = 0; i < totalLines; i++) {
-                lineHighlightClass = option.highlightLines.indexOf((i + 1).toString()) >= 0 ? DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT : "";
-                formattedCode += "<span class='" + lineHighlightClass + "'></span>";
+
+            // for (i = 0; i < totalLines; i++) {
+            //     lineHighlightClass = option.highlightLines.indexOf((i + 1).toString()) >= 0 ? DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT : "";
+            //     formattedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_NUMBER + " " + lineHighlightClass + "'></span>";
+            // }
+
+            for (i = option.lineStart; i < option.lineStart + totalLines; i++) {
+                lineHighlightClass = option.highlightLines.indexOf(i.toString()) >= 0 ? DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_HIGHLIGHT : "";
+                formattedCode += "<span class='" + DY_CODEHIGHLIGHTER_CLASS_CODE_LINE_NUMBER + " " + lineHighlightClass + "'> " + i + "</span>";
             }
+
             formattedCode += "</span>";
         }
 
@@ -186,16 +201,54 @@
 
                 // default header settings for the selected elem element
                 defaultHeader = {
+                    /**
+                     * value: true, false
+                     * if true then, user wants to show the header
+                     */
                     show: false,
+
+                    /**
+                     * values: 'show', 'hide'
+                     * if set to 'show' then, show the number of lines in the code
+                     * eg: 21 lines
+                     */
                     lines: 'hide',
+
+                    /**
+                     * this will be set only if the 'lines' property is set i.e., option.header.lines = 'show'
+                     */
+                    totalLines: 0,
+
+                    /**
+                     * file name to display
+                     * eg: app.js
+                     */
                     filename: ''
                 },
 
                 // default options for the selected elem element
                 option = {
+                    /**
+                     * value: true, false
+                     * if true then, show line numbers
+                     */
                     showLineNumbers: false,
+
+                    /**
+                     * array containing line numbers that will be highlighted
+                     * eg: [10,11,12]
+                     */
                     highlightLines: [],
+
+                    /**
+                     * this is the integer number for the starting i.e., first line
+                     */
                     lineStart: 1,
+
+                    /**
+                     * this holds the header information
+                     * type: object
+                     */
                     header: defaultHeader
                 },
 
@@ -235,7 +288,7 @@
 
             // check if the user wants to start line number from other value
             if (elem.hasAttribute(DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_LINE_START)) {
-                option.lineStart = Number(elem.getAttribute(DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_LINE_START));
+                option.lineStart = parseInt(elem.getAttribute(DY_CODEHIGHLIGHTER_DATA_ATTRIBUTE_LINE_START));
             }
 
             // check if the user wants to show header
@@ -253,7 +306,7 @@
             // if showing line numbers then adjust line number rows
             if (option.showLineNumbers) {
                 lineNumbersRowsSpan = elem.querySelector("span." + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS);
-                lineNumbersRowsSpan.style.counterReset = "linenumber " + (option.lineStart - 1);
+                // lineNumbersRowsSpan.style.counterReset = "linenumber " + (option.lineStart - 1);
                 lineNumbersRowsSpan.style.left = -lineNumbersRowsSpan.offsetWidth - 20 + "px";
                 lineNumbersRowsSpan.style.width = lineNumbersRowsSpan.offsetWidth + 10 + "px";
                 elem.style.paddingLeft = lineNumbersRowsSpan.offsetWidth + 10 + "px";

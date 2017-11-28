@@ -154,7 +154,43 @@ for (r = 0; r < len; r++) {
   // code...
 &lt;/code&gt;
 &lt;/pre&gt;</pre>
-                <pre class="dyCodeHighlighter line-numbers" data-dyCodeHighlighter-line-start="10"><code>/**
+                <pre class="dyCodeHighlighter line-numbers"
+                     data-dyCodeHighlighter-line-start="10"><code>/**
+ * This is a sample program to print the following pattern.
+ *
+ * H
+ * Ha
+ * Hap
+ * Happ
+ * Happy
+ */
+var
+  str = "Happy",
+  len = str.length,
+  r,
+  c,
+  pattern;
+
+for (r = 0; r < len; r++) {
+  pattern = '';
+  for (c = 0; c <= r; c++) {
+    pattern += str[c];
+  }
+  console.log(pattern);
+}</code></pre>
+
+                <p>If you want to start the line number from negative then use the following.</p>
+                <p>Example:</p>
+<pre>&lt;pre class="dyCodeHighlighter line-numbers"
+     data-dyCodeHighlighter-line-start="-11"
+     data-dyCodeHighlighter-highlight="-1,8,10"&gt;
+&lt;code&gt;
+  // code...
+&lt;/code&gt;
+&lt;/pre&gt;</pre>
+                <pre class="dyCodeHighlighter line-numbers"
+                     data-dyCodeHighlighter-line-start="-11"
+                     data-dyCodeHighlighter-highlight="-1,8,10"><code>/**
  * This is a sample program to print the following pattern.
  *
  * H
@@ -430,41 +466,30 @@ for (r = 0; r < len; r++) {
                 </ul>
                 <p>Using the following attributes:</p>
                 <ul>
-                    <li><code>data-dyCodeHighlighter-highlight="11,20,22"</code></li>
-                    <li><code>data-dyCodeHighlighter-header='{"lines": "show", "filename": "app.js"}'</code></li>
+                    <li><code>data-dyCodeHighlighter-highlight="2,5,8"</code></li>
+                    <li><code>data-dyCodeHighlighter-header='{"lines": "show", "filename": "person.js"}'</code></li>
                 </ul>
 
                 <p>header JSON</p>
                 <pre><code>{
   "lines": "show",      //default "hide"
-  "filename": "app.js"  //default ""
+  "filename": "name.ext"  //default ""
 }</code></pre>
 
                 <pre class="dyCodeHighlighter no-thick-left-border line-numbers theme-gray"
-                     data-dyCodeHighlighter-highlight="11,20,22"
-                     data-dyCodeHighlighter-header='{"lines": "show", "filename": "app.js"}'><code>/**
- * This is a sample program to print the following pattern.
- *
- * H
- * Ha
- * Hap
- * Happ
- * Happy
- */
-var
-  str = "Happy",
-  len = str.length,
-  r,
-  c,
-  pattern;
-
-for (r = 0; r < len; r++) {
-  pattern = '';
-  for (c = 0; c <= r; c++) {
-    pattern += str[c];
-  }
-  console.log(pattern);
-}</code></pre>
+                     data-dyCodeHighlighter-highlight="2,5,8"
+                     data-dyCodeHighlighter-header='{"lines": "show", "filename": "person.js"}'><code>var person = {
+    name: "Yusuf Shakeel",
+    description: "Developer and YouTuber",
+    social: {
+        youtube: "https://www.youtube.com/yusufshakeel",
+        facebook: "https://www.facebook.com/yusufshakeel",
+        twitter: "https://twitter.com/yusufshakeel",
+        github: "https://github.com/yusufshakeel",
+        linkedin: "https://www.linkedin.com/in/yusufshakeel"
+    },
+    country: "IN"
+};</code></pre>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

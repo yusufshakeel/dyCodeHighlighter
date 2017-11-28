@@ -85,16 +85,13 @@ pre.dyCodeHighlighter code {
 }
 
 pre.dyCodeHighlighter code span.dyCodeHighlighter-line {
+    padding: 1px 0;
     display: block;
 }
 
 pre.dyCodeHighlighter code span.dyCodeHighlighter-line.highlight,
 pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
     background-color: #fff8dc;
-}
-
-pre.dyCodeHighlighter.line-numbers {
-    /*padding-left: 3.5em;*/
 }
 
 pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows {
@@ -114,6 +111,15 @@ pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows {
 }
 
 pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows > span {
+    padding: 1px 0;
+    color: #333;
+    display: block;
+    padding-right: .8em;
+    text-align: right;
+}
+
+/*
+pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows > span {
     display: block;
     counter-increment: linenumber;
 }
@@ -125,6 +131,7 @@ pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows > span:befor
     padding-right: .8em;
     text-align: right;
 }
+*/
 
 /*------------- themes ------------------*/
 
@@ -160,7 +167,7 @@ pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows >
     background-color: #696969
 }
 
-pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span:before {
+pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows > span {
     color: #fefefe;
 }
 
@@ -192,7 +199,7 @@ pre.dyCodeHighlighter.theme-gray code span.dyCodeHighlighter-line-numbers-rows >
     background-color: #efefef;
 }
 
-pre.dyCodeHighlighter.theme-gray code span.dyCodeHighlighter-line-numbers-rows > span:before {
+pre.dyCodeHighlighter.theme-gray code span.dyCodeHighlighter-line-numbers-rows > span {
     color: #333;
 }
 

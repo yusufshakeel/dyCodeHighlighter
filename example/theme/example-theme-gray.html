@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dyCodeHighlighter</title>
+
+    <!-- dyCodeHighlighter -->
+    <link rel="stylesheet" href="../../dist/css/dycodehighlighter.min.css">
+</head>
+<body>
+    <h3 class="text-center">Demo: Theme Gray</h3>
+
+    <p>Using the following classes:</p>
+    <ul>
+        <li><code>.dyCodeHighlighter</code></li>
+        <li><code>.line-numbers</code></li>
+        <li><code>.theme-gray</code></li>
+    </ul>
+    <p>Using the following attributes:</p>
+    <ul>
+        <li><code>data-dyCodeHighlighter-highlight="11,20,22"</code></li>
+    </ul>
+
+<pre class="dyCodeHighlighter line-numbers theme-gray" data-dyCodeHighlighter-highlight="11,20,22"><code>/**
+ * This is a sample program to print the following pattern.
+ *
+ * H
+ * Ha
+ * Hap
+ * Happ
+ * Happy
+ */
+var
+  str = "Happy",
+  len = str.length,
+  r,
+  c,
+  pattern;
+
+for (r = 0; r < len; r++) {
+  pattern = '';
+  for (c = 0; c <= r; c++) {
+    pattern += str[c];
+  }
+  console.log(pattern);
+}</code></pre>
+
+    <!-- javascript -->
+    <script src="../../dist/js/dycodehighlighter.min.js"></script>
+    <script>dyCodeHighlighter.init();</script>
+</body>
+</html>

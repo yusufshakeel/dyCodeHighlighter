@@ -131,6 +131,7 @@ pre.dyCodeHighlighter code span.dyCodeHighlighter-line-numbers-rows > span:befor
 /*=.theme-blue
 ---------------*/
 pre.dyCodeHighlighter.theme-blue {
+    border: 1px solid #1e90ff;
     border-left: 5px solid #1e90ff;
     background-color: #fff;
     color: #333;
@@ -148,6 +149,7 @@ pre.dyCodeHighlighter.theme-blue code span.dyCodeHighlighter-line-numbers-rows >
 /*=.theme-dark
 ---------------*/
 pre.dyCodeHighlighter.theme-dark {
+    border: 1px solid #808080;
     border-left: 5px solid #808080;
     background-color: #333;
     color: #fefefe;
@@ -162,10 +164,46 @@ pre.dyCodeHighlighter.theme-dark code span.dyCodeHighlighter-line-numbers-rows >
     color: #fefefe;
 }
 
+/*=.theme-choco
+---------------*/
+pre.dyCodeHighlighter.theme-choco {
+    border: 1px solid #ab4700;
+    border-left: 5px solid #ab4700;
+    background-color: #fff;
+    color: #333;
+}
+
+pre.dyCodeHighlighter.theme-choco code span.dyCodeHighlighter-line.highlight,
+pre.dyCodeHighlighter.theme-choco code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
+    background-color: #f9e6d9;
+}
+
+/*=.theme-gray
+---------------*/
+pre.dyCodeHighlighter.theme-gray {
+    border: 1px solid #aaa;
+    border-left: 5px solid #aaa;
+    background-color: #fff;
+    color: #333;
+}
+
+pre.dyCodeHighlighter.theme-gray code span.dyCodeHighlighter-line.highlight,
+pre.dyCodeHighlighter.theme-gray code span.dyCodeHighlighter-line-numbers-rows > span.highlight {
+    background-color: #efefef;
+}
+
+pre.dyCodeHighlighter.theme-gray code span.dyCodeHighlighter-line-numbers-rows > span:before {
+    color: #333;
+}
+
 /*------------- important overrides ------------------*/
 
-pre.dyCodeHighlighter.no-left-border {
-    border-left: 1px solid #aaa !important;
+pre.dyCodeHighlighter.no-thick-left-border {
+    border-left-width: 1px !important;
+}
+
+pre.dyCodeHighlighter.no-border {
+    border: 0 !important;
 }
 
 pre.dyCodeHighlighter.no-line-numbers-border code span.dyCodeHighlighter-line-numbers-rows {

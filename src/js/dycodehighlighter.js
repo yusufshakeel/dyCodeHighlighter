@@ -57,8 +57,8 @@
     /**
      * This will copy the default into source.
      *
-     * @param source
-     * @param defaults
+     * @param {object} source
+     * @param {object} defaults
      * @returns {object}
      */
     function extendSource(source, defaults) {
@@ -205,10 +205,10 @@
                 // get the text content of the selected <code> element
                 codeContent = codeEl.textContent,
 
-                // formatted code
+                // formatted code object
                 formattedCodeObj,
 
-                // line numbers row <span>
+                // line numbers rows <span> element
                 lineNumbersRowsSpan;
 
             /**

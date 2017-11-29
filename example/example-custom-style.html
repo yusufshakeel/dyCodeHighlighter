@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dyCodeHighlighter</title>
+
+    <!-- dyCodeHighlighter -->
+    <link rel="stylesheet" href="../dist/css/dycodehighlighter.min.css">
+</head>
+<body>
+    <h3 class="text-center">Demo - Custom Style</h3>
+
+    <p>Using the following classes:</p>
+    <ul>
+        <li><code>.dyCodeHighlighter</code></li>
+        <li><code>.line-numbers</code></li>
+    </ul>
+    <p>Using the following attributes:</p>
+    <ul>
+        <li><code>data-dyCodeHighlighter-highlight="11,20,22"</code></li>
+        <li><code>data-dyCodeHighlighter-custom-style='{"backgroundColor": "#7b68ee", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "thickLeftBorderColor": "#f4a460", "borderColor": "#f4a460", "fontSize": "24px", "lineNumbersBorderColor": "#fff"}'</code></li>
+    </ul>
+
+    <pre class="dyCodeHighlighter line-numbers"
+         data-dyCodeHighlighter-highlight="11,20,22"
+         data-dyCodeHighlighter-custom-style='{"backgroundColor": "#7b68ee", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "thickLeftBorderColor": "#f4a460", "borderColor": "#f4a460", "fontSize": "24px", "lineNumbersBorderColor": "#fff"}'><code>/**
+ * This is a sample program to print the following pattern.
+ *
+ * H
+ * Ha
+ * Hap
+ * Happ
+ * Happy
+ */
+var
+  str = "Happy",
+  len = str.length,
+  r,
+  c,
+  pattern;
+
+for (r = 0; r < len; r++) {
+  pattern = '';
+  for (c = 0; c <= r; c++) {
+    pattern += str[c];
+  }
+  console.log(pattern);
+}</code></pre>
+
+    <!-- javascript -->
+    <script src="../dist/js/dycodehighlighter.min.js"></script>
+    <script>dyCodeHighlighter.init();</script>
+</body>
+</html>

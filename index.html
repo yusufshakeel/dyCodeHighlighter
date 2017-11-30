@@ -492,6 +492,49 @@ for (r = 0; r < len; r++) {
 };</code></pre>
             </div>
 
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <h3 class="text-center">Custom Style</h3>
+
+                <p>Using the following classes:</p>
+                <ul>
+                    <li><code>.dyCodeHighlighter</code></li>
+                    <li><code>.line-numbers</code></li>
+                </ul>
+
+                <p>Using the following attributes:</p>
+                <ul>
+                    <li><code>data-dyCodeHighlighter-highlight="2,5,8"</code></li>
+                    <li><code>data-dyCodeHighlighter-custom-style='{"backgroundColor": "#7b68ee", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "thickLeftBorderColor": "#f4a460", "borderColor": "#f4a460", "fontSize": "16px", "lineNumbersBorderColor": "#fff"}'</code></li>
+                </ul>
+
+                <p>custom style JSON</p>
+<pre><code>{
+  "backgroundColor": "#7b68ee",          //optional, value in valid color name, hex, rgb, rgba
+  "color": "white",                      //optional, value in valid color name, hex, rgb, rgba
+  "highlightBgColor": "white",           //optional, value in valid color name, hex, rgb, rgba
+  "highlightColor": "black",             //optional, value in valid color name, hex, rgb, rgba
+  "thickLeftBorderColor": "#f4a460",     //optional, value in valid color name, hex, rgb, rgba
+  "borderColor": "#f4a460",              //optional, value in valid color name, hex, rgb, rgba
+  "lineNumbersBorderColor": "#fff",      //optional, value in valid color name, hex, rgb, rgba
+  "fontSize": "24px"                     //optional, value in valid font size unit like: 20px
+}</code></pre>
+
+                <pre class="dyCodeHighlighter line-numbers"
+                     data-dyCodeHighlighter-highlight="2,5,8"
+                     data-dyCodeHighlighter-custom-style='{"backgroundColor": "#7b68ee", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "thickLeftBorderColor": "#f4a460", "borderColor": "#f4a460", "fontSize": "16px", "lineNumbersBorderColor": "#fff"}'><code>var person = {
+    name: "Yusuf Shakeel",
+    description: "Developer and YouTuber",
+    social: {
+        youtube: "https://www.youtube.com/yusufshakeel",
+        facebook: "https://www.facebook.com/yusufshakeel",
+        twitter: "https://twitter.com/yusufshakeel",
+        github: "https://github.com/yusufshakeel",
+        linkedin: "https://www.linkedin.com/in/yusufshakeel"
+    },
+    country: "IN"
+};</code></pre>
+            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
                 <div class="text-center">

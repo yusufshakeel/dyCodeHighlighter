@@ -241,7 +241,7 @@
 
         // apply style to the line numbers rows
         cssRules += '#' + customStyleElemID + ' span.' + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS + '{' +
-            'border-right: 1px solid ' + option.lineNumbersBorderColor + ';' +
+            'border-right: ' + option.lineNumbersBorder + ';' +
             '}';
 
         // apply style to highlighted lines
@@ -301,45 +301,52 @@
 
                     /**
                      * this is for the background color
-                     * optional, value in valid color name, hex, rgb, rgba
+                     * optional
+                     * value in valid color name, hex, rgb, rgba
                      */
                     backgroundColor: '#fff',
 
                     /**
                      * this is for the color of the text
-                     * optional, value in valid color name, hex, rgb, rgba
+                     * optional
+                     * value in valid color name, hex, rgb, rgba
                      */
                     color: '#333',
 
                     /**
                      * highlighted line background color
-                     * optional, value in valid color name, hex, rgb, rgba
+                     * optional
+                     * value in valid color name, hex, rgb, rgba
                      */
                     highlightBgColor: '#fff8dc',
 
                     /**
                      * highlighted line text color
-                     * optional, value in valid color name, hex, rgb, rgba
+                     * optional
+                     * value in valid color name, hex, rgb, rgba
                      */
                     highlightColor: '#333',
 
                     /**
                      * this is to style the border - top right bottom left
-                     * optional, value in valid form 'width style color' like '5px solid #aaa'
+                     * optional
+                     * value in valid form 'width style color' like '5px solid #aaa' or 'none'
                      */
                     border: '1px solid #aaa',
 
                     /**
                      * font size
-                     * optional, value in valid font size unit like: 20px
+                     * optional
+                     * value in valid font size unit like: 20px
                      */
                     fontSize: 'initial',
 
                     /**
                      * line numbers border color
-                     * optional, value in valid color name, hex, rgb, rgba
+                     * optional
+                     * value in valid form 'width style color' like '5px solid #aaa'
                      */
-                    lineNumbersBorderColor: '#999'
+                    lineNumbersBorder: '#999'
                 },
 
                 // default header settings for the selected elem element

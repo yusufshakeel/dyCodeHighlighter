@@ -10,6 +10,21 @@
 <body>
     <h3 class="text-center">Demo - Custom Style</h3>
 
+    <p>custom style JSON format</p>
+    <pre><code>{
+  "backgroundColor": "#7b68ee",          //optional, value in valid color name, hex, rgb, rgba
+  "color": "white",                      //optional, value in valid color name, hex, rgb, rgba
+  "highlightBgColor": "white",           //optional, value in valid color name, hex, rgb, rgba
+  "highlightColor": "black",             //optional, value in valid color name, hex, rgb, rgba
+  "border": "5px solid blue",            //optional, value in valid form 'width style color' like '5px solid #aaa' or 'none'
+  "borderTop": "5px solid blue",         //optional, value in valid form 'width style color' like '5px solid #aaa' or 'none'
+  "borderRight": "4px dashed #aaa",      //optional, value in valid form 'width style color' like '5px solid #aaa' or 'none'
+  "borderBottom": "5px solid blue",      //optional, value in valid form 'width style color' like '5px solid #aaa' or 'none'
+  "borderLeft": "4px dashed #aaa",       //optional, value in valid form 'width style color' like '5px solid #aaa' or 'none'
+  "lineNumbersBorder": "5px solid #fff", //optional, value in valid form 'width style color' like '5px solid #aaa' or 'none'
+  "fontSize": "24px"                     //optional, value in valid font size unit like: 20px
+}</code></pre>
+
     <p>Using the following classes:</p>
     <ul>
         <li><code>.dyCodeHighlighter</code></li>
@@ -18,23 +33,12 @@
     <p>Using the following attributes:</p>
     <ul>
         <li><code>data-dyCodeHighlighter-highlight="11,20,22"</code></li>
-        <li><code>data-dyCodeHighlighter-custom-style='{"backgroundColor": "#7b68ee", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "border": "5px solid #f4a460", "fontSize": "24px", "lineNumbersBorderColor": "#fff"}'</code></li>
+        <li><code>data-dyCodeHighlighter-custom-style='{"backgroundColor": "#7b68ee", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "border": "5px solid #f4a460", "fontSize": "24px", "lineNumbersBorder": "2px solid #fff"}'</code></li>
     </ul>
-
-    <p>custom style JSON format</p>
-<pre><code>{
-  "backgroundColor": "#7b68ee",          //optional, value in valid color name, hex, rgb, rgba
-  "color": "white",                      //optional, value in valid color name, hex, rgb, rgba
-  "highlightBgColor": "white",           //optional, value in valid color name, hex, rgb, rgba
-  "highlightColor": "black",             //optional, value in valid color name, hex, rgb, rgba
-  "border": "3px solid red",             //optional, value in valid form 'width style color' like '5px solid #eee'
-  "lineNumbersBorderColor": "#fff",      //optional, value in valid color name, hex, rgb, rgba
-  "fontSize": "24px"                     //optional, value in valid font size unit like: 20px
-}</code></pre>
 
     <pre class="dyCodeHighlighter line-numbers"
          data-dyCodeHighlighter-highlight="11,20,22"
-         data-dyCodeHighlighter-custom-style='{"backgroundColor": "#7b68ee", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "border": "5px solid #f4a460", "fontSize": "24px", "lineNumbersBorderColor": "#fff"}'><code>/**
+         data-dyCodeHighlighter-custom-style='{"backgroundColor": "#7b68ee", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "border": "5px solid #f4a460", "fontSize": "24px", "lineNumbersBorder": "2px solid #fff"}'><code>/**
  * This is a sample program to print the following pattern.
  *
  * H
@@ -68,26 +72,12 @@ for (r = 0; r < len; r++) {
     <p>Using the following attributes:</p>
     <ul>
         <li><code>data-dyCodeHighlighter-highlight="11,20,22"</code></li>
-        <li><code>data-dyCodeHighlighter-custom-style='{"backgroundColor": "#666", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "borderLeft": "5px solid #f4a460", "fontSize": "24px", "lineNumbersBorderColor": "#fff"}'</code></li>
+        <li><code>data-dyCodeHighlighter-custom-style='{"backgroundColor": "#666", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "borderLeft": "5px solid #f4a460", "fontSize": "24px", "lineNumbersBorder": "none"}'</code></li>
     </ul>
-
-    <p>custom style JSON format</p>
-    <pre><code>{
-  "backgroundColor": "#eee",             //optional, value in valid color name, hex, rgb, rgba
-  "color": "#333",                       //optional, value in valid color name, hex, rgb, rgba
-  "highlightBgColor": "#999",            //optional, value in valid color name, hex, rgb, rgba
-  "highlightColor": "#fff",              //optional, value in valid color name, hex, rgb, rgba
-  "borderTop": "5px solid blue",         //optional, value in valid form 'width style color' like '5px solid #aaa'
-  "borderRight": "4px dashed #aaa",      //optional, value in valid form 'width style color' like '5px solid #aaa'
-  "borderBottom": "5px solid blue",      //optional, value in valid form 'width style color' like '5px solid #aaa'
-  "borderLeft": "4px dashed #aaa",       //optional, value in valid form 'width style color' like '5px solid #aaa'
-  "lineNumbersBorderColor": "#111",      //optional, value in valid color name, hex, rgb, rgba
-  "fontSize": "24px"                     //optional, value in valid font size unit like: 20px
-}</code></pre>
 
     <pre class="dyCodeHighlighter line-numbers"
          data-dyCodeHighlighter-highlight="11,20,22"
-         data-dyCodeHighlighter-custom-style='{"backgroundColor": "#666", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "borderLeft": "5px solid #f4a460", "fontSize": "24px", "lineNumbersBorderColor": "#fff"}'><code>/**
+         data-dyCodeHighlighter-custom-style='{"backgroundColor": "#666", "color": "white", "highlightBgColor": "white", "highlightColor": "black", "borderLeft": "5px solid #f4a460", "fontSize": "24px", "lineNumbersBorder": "none"}'><code>/**
  * This is a sample program to print the following pattern.
  *
  * H

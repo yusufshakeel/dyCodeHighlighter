@@ -144,6 +144,9 @@
             else {
                 lines[i] = lines[i].replace(/\</g, '&lt;');
                 lines[i] = lines[i].replace(/\>/g, '&gt;');
+                lines[i] = lines[i].replace(/\&/g, '&amp;');
+                lines[i] = lines[i].replace(/\"/g, '&quot;');
+                lines[i] = lines[i].replace(/\'/g, '&apos;');
             }
         }
 
@@ -208,11 +211,23 @@
          */
 
         // apply style to the el element code
+        if (typeof option.borderTop === 'undefined') {
+            option.borderTop = option.border;
+        }
+        if (typeof option.borderRight === 'undefined') {
+            option.borderRight = option.border;
+        }
+        if (typeof option.borderBottom === 'undefined') {
+            option.borderBottom = option.border;
+        }
+        if (typeof option.borderLeft === 'undefined') {
+            option.borderLeft = option.border;
+        }
         cssRules += '#' + customStyleElemID + ' pre.' + DY_CODEHIGHLIGHTER_CLASS + '{' +
             'background-color: ' + option.backgroundColor + ';' +
             'color: ' + option.color + ';' +
             'font-size: ' + option.fontSize + ';' +
-            'border: ' + option.borderWidth + ' ' + option.borderStyle + ' ' + option.borderColor + ';' +
+            'border: ' + option.border + ';' +
             'border-top: ' + option.borderTop +';' +
             'border-right: ' + option.borderRight +';' +
             'border-bottom: ' + option.borderBottom +';' +
@@ -309,46 +324,10 @@
                     highlightColor: '#333',
 
                     /**
-                     * border width
-                     * optional, value in valid width size like 5px
+                     * this is to style the border - top right bottom left
+                     * optional, value in valid form 'width style color' like '5px solid #aaa'
                      */
-                    borderWidth: '1px',
-
-                    /**
-                     * border style
-                     * optional, value in valid style like solid, dashed
-                     */
-                    borderStyle: 'solid',
-
-                    /**
-                     * border color
-                     * optional, value in valid color name, hex, rgb, rgba
-                     */
-                    borderColor: '#aaa',
-
-                    /**
-                     * top border style
-                     * optional, value in valid form like '5px solid #eee'
-                     */
-                    borderTop: '1px solid #aaa',
-
-                    /**
-                     * right border style
-                     * optional, value in valid form like '5px solid #eee'
-                     */
-                    borderRight: '1px solid #aaa',
-
-                    /**
-                     * bottom border style
-                     * optional, value in valid form like '5px solid #eee'
-                     */
-                    borderBottom: '1px solid #aaa',
-
-                    /**
-                     * left border style
-                     * optional, value in valid form like '5px solid #eee'
-                     */
-                    borderLeft: '1px solid #aaa',
+                    border: '1px solid #aaa',
 
                     /**
                      * font size
@@ -487,13 +466,13 @@
             }
 
             // if showing line numbers then adjust line number rows
-            if (option.showLineNumbers) {
-                lineNumbersRowsSpan = elem.querySelector("span." + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS);
-                // lineNumbersRowsSpan.style.counterReset = "linenumber " + (option.lineStart - 1);
-                lineNumbersRowsSpan.style.left = -lineNumbersRowsSpan.offsetWidth - 20 + "px";
-                lineNumbersRowsSpan.style.width = lineNumbersRowsSpan.offsetWidth + 10 + "px";
-                elem.style.paddingLeft = lineNumbersRowsSpan.offsetWidth + 10 + "px";
-            }
+            // if (option.showLineNumbers) {
+            //     lineNumbersRowsSpan = elem.querySelector("span." + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS);
+            //     // lineNumbersRowsSpan.style.counterReset = "linenumber " + (option.lineStart - 1);
+            //     lineNumbersRowsSpan.style.left = -lineNumbersRowsSpan.offsetWidth - 20 + "px";
+            //     lineNumbersRowsSpan.style.width = lineNumbersRowsSpan.offsetWidth + 10 + "px";
+            //     elem.style.paddingLeft = lineNumbersRowsSpan.offsetWidth + 10 + "px";
+            // }
 
             //--------------- wrap the selected elem element inside the container element --------------
             wrap(elem, containerEl);
@@ -508,6 +487,15 @@
 
                 // add header to the container element
                 addHeader(containerEl, option.header);
+            }
+
+            // if showing line numbers then adjust line number rows
+            if (option.showLineNumbers) {
+                lineNumbersRowsSpan = elem.querySelector("span." + DY_CODEHIGHLIGHTER_CLASS_LINE_NUMBER_ROWS);
+                // lineNumbersRowsSpan.style.counterReset = "linenumber " + (option.lineStart - 1);
+                lineNumbersRowsSpan.style.left = -lineNumbersRowsSpan.offsetWidth - 20 + "px";
+                lineNumbersRowsSpan.style.width = lineNumbersRowsSpan.offsetWidth + 10 + "px";
+                elem.style.paddingLeft = lineNumbersRowsSpan.offsetWidth + 10 + "px";
             }
 
         });

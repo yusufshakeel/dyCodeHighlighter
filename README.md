@@ -4,7 +4,7 @@ Highlight code in the web page.
 # Status
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/dyCodeHighlighter)
-[![npm version](https://img.shields.io/badge/npm-1.2.0-blue.svg)](https://www.npmjs.com/package/dycodehighlighter)
+[![npm version](https://img.shields.io/badge/npm-1.3.0-blue.svg)](https://www.npmjs.com/package/dycodehighlighter)
 [![](https://data.jsdelivr.com/v1/package/npm/dycodehighlighter/badge)](https://www.jsdelivr.com/package/npm/dycodehighlighter)
 
 # Documentation

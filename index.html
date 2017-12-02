@@ -509,14 +509,58 @@ for (r = 0; r < len; r++) {
 
                 <p>custom style JSON</p>
 <pre><code>{
-  "backgroundColor": "#7b68ee",          //optional, value in valid color name, hex, rgb, rgba
-  "color": "white",                      //optional, value in valid color name, hex, rgb, rgba
-  "highlightBgColor": "white",           //optional, value in valid color name, hex, rgb, rgba
-  "highlightColor": "black",             //optional, value in valid color name, hex, rgb, rgba
-  "thickLeftBorderColor": "#f4a460",     //optional, value in valid color name, hex, rgb, rgba
-  "borderColor": "#f4a460",              //optional, value in valid color name, hex, rgb, rgba
-  "lineNumbersBorderColor": "#fff",      //optional, value in valid color name, hex, rgb, rgba
-  "fontSize": "24px"                     //optional, value in valid font size unit like: 20px
+  /**
+   * this for the background color
+   * optional, value in valid color name, hex, rgb, rgba
+   */
+  backgroundColor: '#fff',
+
+  /**
+   * this for the color of the text
+   * optional, value in valid color name, hex, rgb, rgba
+   */
+  color: '#333',
+
+  /**
+   * highlighted line background color
+   * optional, value in valid color name, hex, rgb, rgba
+   */
+  highlightBgColor: '#fff8dc',
+
+  /**
+   * highlighted line text color
+   * optional, value in valid color name, hex, rgb, rgba
+   */
+  highlightColor: '#333',
+
+  /**
+   * thick left side border color
+   * optional, value in valid color name, hex, rgb, rgba
+   */
+  thickLeftBorderColor: '#00aa00',
+
+  /**
+   * thick left side border thickness
+   */
+  thickLeftBorderWidth: '5px',
+
+  /**
+   * border color
+   * optional, value in valid color name, hex, rgb, rgba
+   */
+  borderColor: '#aaa',
+
+  /**
+   * font size
+   * optional, value in valid font size unit like: 20px
+   */
+  fontSize: 'initial',
+
+  /**
+   * line numbers border color
+   * optional, value in valid color name, hex, rgb, rgba
+   */
+  lineNumbersBorderColor: '#999'
 }</code></pre>
 
                 <pre class="dyCodeHighlighter line-numbers"

@@ -216,7 +216,7 @@
             'color: ' + option.color + ';' +
             'font-size: ' + option.fontSize + ';' +
             'border: 1px solid ' + option.borderColor + ';' +
-            'border-left: 5px solid ' + option.thickLeftBorderColor + ';' +
+            'border-left: ' + option.thickLeftBorderWidth + ' solid ' + option.thickLeftBorderColor + ';' +
             '}';
 
         // apply style to line numbers
@@ -308,6 +308,11 @@
                      * thick left side border color
                      */
                     thickLeftBorderColor: '#00aa00',
+
+                    /**
+                     * thick left side border width
+                     */
+                    thickLeftBorderWidth: '5px',
 
                     /**
                      * border color

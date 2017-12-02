@@ -457,6 +457,12 @@ for (r = 0; r < len; r++) {
             <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
                 <h3 class="text-center">Add Header</h3>
 
+                <p>header JSON</p>
+                <pre><code>{
+  "lines": "show",        //default value: "hide"
+  "filename": "name.ext"  //default value: ""
+}</code></pre>
+
                 <p>Using the following classes:</p>
                 <ul>
                     <li><code>.dyCodeHighlighter</code></li>
@@ -470,15 +476,120 @@ for (r = 0; r < len; r++) {
                     <li><code>data-dyCodeHighlighter-header='{"lines": "show", "filename": "person.js"}'</code></li>
                 </ul>
 
-                <p>header JSON</p>
-                <pre><code>{
-  "lines": "show",        //default "hide"
-  "filename": "name.ext"  //default ""
-}</code></pre>
-
                 <pre class="dyCodeHighlighter no-thick-left-border line-numbers theme-gray"
                      data-dyCodeHighlighter-highlight="2,5,8"
                      data-dyCodeHighlighter-header='{"lines": "show", "filename": "person.js"}'><code>var person = {
+    name: "Yusuf Shakeel",
+    description: "Developer and YouTuber",
+    social: {
+        youtube: "https://www.youtube.com/yusufshakeel",
+        facebook: "https://www.facebook.com/yusufshakeel",
+        twitter: "https://twitter.com/yusufshakeel",
+        github: "https://github.com/yusufshakeel",
+        linkedin: "https://www.linkedin.com/in/yusufshakeel"
+    },
+    country: "IN"
+};</code></pre>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <h3 class="text-center">Custom Style</h3>
+
+                <p>custom style JSON</p>
+<pre class="dyCodeHighlighter"><code>{
+  /**
+   * this is for the background color
+   * optional
+   * value in valid color name, hex, rgb, rgba
+   */
+  backgroundColor: '#fff',
+
+  /**
+   * this is for the color of the text
+   * optional
+   * value in valid color name, hex, rgb, rgba
+   */
+  color: '#333',
+
+  /**
+   * highlighted line background color
+   * optional
+   * value in valid color name, hex, rgb, rgba
+   */
+  highlightBgColor: '#fff8dc',
+
+  /**
+   * highlighted line text color
+   * optional
+   * value in valid color name, hex, rgb, rgba
+   */
+  highlightColor: '#333',
+
+  /**
+   * this is to style the border - top right bottom left
+   * optional
+   * value in valid form 'width style color' like '5px solid #aaa' or 'none'
+   */
+  border: '1px solid #aaa',
+
+  /**
+   * this is to style the top border
+   * optional
+   * value in valid form 'width style color' like '5px solid #aaa' or 'none'
+   */
+  borderTop: '1px solid #aaa',
+
+  /**
+   * this is to style the right border
+   * optional
+   * value in valid form 'width style color' like '5px solid #aaa' or 'none'
+   */
+  borderRight: '1px solid #aaa',
+
+  /**
+   * this is to style the bottom border
+   * optional
+   * value in valid form 'width style color' like '5px solid #aaa' or 'none'
+   */
+  borderBottom: '1px solid #aaa',
+
+  /**
+   * this is to style the left border
+   * optional
+   * value in valid form 'width style color' like '5px solid #aaa' or 'none'
+   */
+  borderLeft: '1px solid #aaa',
+
+  /**
+   * font size
+   * optional
+   * value in valid font size unit like: 20px
+   */
+  fontSize: '12px',
+
+  /**
+   * line numbers border
+   * optional
+   * value in valid form 'width style color' like '5px solid #aaa' or 'none'
+   */
+  lineNumbersBorder: '1px solid #999'
+}</code></pre>
+
+                <p>Using the following classes:</p>
+                <ul>
+                    <li><code>.dyCodeHighlighter</code></li>
+                    <li><code>.line-numbers</code></li>
+                </ul>
+
+                <p>Using the following attributes:</p>
+                <ul>
+                    <li><code>data-dyCodeHighlighter-highlight="2,5,8"</code></li>
+                    <li><code>data-dyCodeHighlighter-custom-style='{"backgroundColor": "#666", "color": "#fff", "highlightBgColor": "#eee", "highlightColor": "#111", "border": "2px solid #999", "fontSize": "12px", "lineNumbersBorder": "2px solid #fff"}'</code></li>
+                </ul>
+
+                <pre class="dyCodeHighlighter line-numbers"
+                     data-dyCodeHighlighter-highlight="2,5,8"
+                     data-dyCodeHighlighter-custom-style='{"backgroundColor": "#666", "color": "#fff", "highlightBgColor": "#eee", "highlightColor": "#111", "border": "2px solid #999", "fontSize": "12px", "lineNumbersBorder": "2px solid #fff"}'><code>var person = {
     name: "Yusuf Shakeel",
     description: "Developer and YouTuber",
     social: {

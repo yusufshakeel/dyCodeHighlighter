@@ -185,23 +185,20 @@
      * this function will apply the custom style.
      *
      * @param el
+     * @param parentEl
      * @param {object} option
      */
-    function applyCustomStyle(el, option) {
+    function applyCustomStyle(el, parentEl, option) {
         // variables
         var
             cssRules = '',
             head = document.head || document.getElementsByTagName('head')[0],
             style,
-            parentEl,
             customStyleElemID
         ;
 
         // generate random id
         customStyleElemID = DY_CODEHIGHLIGHTER_CUSTOM_STYLE_RANDOM_ID + (new global.Date().getTime().toString()) + global.parseInt(global.Math.random() * 1000);
-
-        // get parent element of the el element
-        parentEl = el.parentElement;
 
         // add custom style id to the parent element of the el element
         parentEl.setAttribute('id', customStyleElemID);
@@ -215,8 +212,11 @@
             'background-color: ' + option.backgroundColor + ';' +
             'color: ' + option.color + ';' +
             'font-size: ' + option.fontSize + ';' +
-            'border: 1px solid ' + option.borderColor + ';' +
-            'border-left: ' + option.thickLeftBorderWidth + ' solid ' + option.thickLeftBorderColor + ';' +
+            'border: ' + option.borderWidth + ' ' + option.borderStyle + ' ' + option.borderColor + ';' +
+            'border-top: ' + option.borderTop +';' +
+            'border-right: ' + option.borderRight +';' +
+            'border-bottom: ' + option.borderBottom +';' +
+            'border-left: ' + option.borderLeft +';' +
             '}';
 
         // apply style to line numbers
@@ -285,47 +285,80 @@
                     isApplied: false,
 
                     /**
-                     * this for the background color
+                     * this is for the background color
+                     * optional, value in valid color name, hex, rgb, rgba
                      */
                     backgroundColor: '#fff',
 
                     /**
-                     * this for the color of the text
+                     * this is for the color of the text
+                     * optional, value in valid color name, hex, rgb, rgba
                      */
                     color: '#333',
 
                     /**
                      * highlighted line background color
+                     * optional, value in valid color name, hex, rgb, rgba
                      */
                     highlightBgColor: '#fff8dc',
 
                     /**
                      * highlighted line text color
+                     * optional, value in valid color name, hex, rgb, rgba
                      */
                     highlightColor: '#333',
 
                     /**
-                     * thick left side border color
+                     * border width
+                     * optional, value in valid width size like 5px
                      */
-                    thickLeftBorderColor: '#00aa00',
+                    borderWidth: '1px',
 
                     /**
-                     * thick left side border width
+                     * border style
+                     * optional, value in valid style like solid, dashed
                      */
-                    thickLeftBorderWidth: '5px',
+                    borderStyle: 'solid',
 
                     /**
                      * border color
+                     * optional, value in valid color name, hex, rgb, rgba
                      */
                     borderColor: '#aaa',
 
                     /**
+                     * top border style
+                     * optional, value in valid form like '5px solid #eee'
+                     */
+                    borderTop: '1px solid #aaa',
+
+                    /**
+                     * right border style
+                     * optional, value in valid form like '5px solid #eee'
+                     */
+                    borderRight: '1px solid #aaa',
+
+                    /**
+                     * bottom border style
+                     * optional, value in valid form like '5px solid #eee'
+                     */
+                    borderBottom: '1px solid #aaa',
+
+                    /**
+                     * left border style
+                     * optional, value in valid form like '5px solid #eee'
+                     */
+                    borderLeft: '1px solid #aaa',
+
+                    /**
                      * font size
+                     * optional, value in valid font size unit like: 20px
                      */
                     fontSize: 'initial',
 
                     /**
                      * line numbers border color
+                     * optional, value in valid color name, hex, rgb, rgba
                      */
                     lineNumbersBorderColor: '#999'
                 },
@@ -450,7 +483,7 @@
 
             // if applying custom style
             if (option.customStyle.isApplied) {
-                applyCustomStyle(elem, option.customStyle);
+                applyCustomStyle(elem, containerEl, option.customStyle);
             }
 
             // if showing line numbers then adjust line number rows

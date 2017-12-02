@@ -54,6 +54,7 @@ Sample:
 * Show header info like: total lines and filename
 * Start line number from a custom integer value like -10, 0, 10 etc.
 * Theme: blue, choco, dark, gray
+* Custom style
 
 
 # License

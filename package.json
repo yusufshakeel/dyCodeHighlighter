@@ -1,6 +1,6 @@
 {
   "name": "dycodehighlighter",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Highlight code in the web page.",
   "main": "index.html",
   "scripts": {
